@@ -18,4 +18,9 @@ class App < Sinatra::Base
     @user_name = params[:name]
     "Goodbye #{@user_name}!"
   end
+  
+  get "medicines/:id" do
+    @medicine = all_the_medicines.select do |medicine|
+      medicine.id == params[:id]
+  end
 end
